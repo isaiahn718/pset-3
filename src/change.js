@@ -13,3 +13,17 @@ if (Number.isNaN(amount)) {
   console.log("Invalid")
 } else if (amount < MIN || amount > MAX) {
   console.log("Invalid")
+} else {
+    let q = Math.floor(amount / QUARTER_VALUE);
+    amount = amount % QUARTER_VALUE;
+
+    let d = Math.floor(amount / DIME_VALUE);
+    amount = amount % DIME_VALUE;
+
+    let n = Math.floor(amount / NICKEL_VALUE);
+    amount = amount % NICKEL_VALUE;
+
+    let p = Math.round(amount * 100);
+
+    console.log("\n" + q + " quarters, " + d + " dimes, " + n + " nickels, " + p + " pennies.");
+}
